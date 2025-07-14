@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entropy Explorer + LLM</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: 'Courier New', monospace;
+      color: #00ff99;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h2 {
+      color: #00ffaa;
+      text-shadow: 1px 1px 3px #008866;
+    }
+
+    input, button {
+      font-family: inherit;
+      font-size: 14px;
+      padding: 6px;
+      margin: 4px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      background-color: #00ffaa;
+      color: black;
+      cursor: pointer;
+    }
+
+    pre {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-left: 4px solid #00ffaa;
+      overflow-x: auto;
+      max-height: 300px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    #blockData, #responseArea {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="logo" id="logo" style="width: 100px; height: auto;" />
+  <h2>Entropy Block Chat (MVP)</h2>
+
+  <input id="blockInput" placeholder="Enter block hash or type 'latest'" />
+  <button onclick="fetchBlock()">Fetch Block</button>
+
+  <div id="blockData"></div>
+
+  <hr />
+
+  <input id="questionInput" placeholder="Ask something about the block..." style="width: 70%;" />
+  <button onclick="askQuestion()">Ask</button>
+
+  <div id="responseArea"></div>
+
+  <script src="renderer.js"></script>
+  <script type="module" src="contract_wallets.js"></script>
+
+</body>
+</html>
