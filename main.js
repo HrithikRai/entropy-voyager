@@ -3,6 +3,7 @@ const path = require('path');
 const { ApiPromise, WsProvider } = require('@polkadot/api');
 const { fetchBlockDetails } = require('./blockchain');
 const { askLLMChat } = require('./llm');
+const { askLLM } = require('./browserllm');
 const llmCache = new Map(); 
 let cachedBlockData = null;
 
@@ -56,6 +57,23 @@ ipcMain.handle('fetchBlocks', async (_event, count = 10) => {
     console.error('❌ Error fetching blocks:', err);
     return [];
   }
+});
+
+ipcMain.handle('ask-llm', async (_event, question, blockNumber) => {
+  if (!cachedBlockData) return 'No block data available.';
+
+  const blockData = cachedBlockData.find(b => b.number == blockNumber);
+  if (!blockData) return `Block ${blockNumber} not found.`;
+
+  const cacheKey = `${blockNumber}:${question.trim().toLowerCase()}`;
+  if (llmCache.has(cacheKey)) {
+    console.log(`⚡ Serving cached LLM response for block ${blockNumber}`);
+    return llmCache.get(cacheKey);
+  }
+
+  const response = await askLLM(question, blockData);
+  llmCache.set(cacheKey, response); // ✅ Cache it
+  return response;
 });
 
 
