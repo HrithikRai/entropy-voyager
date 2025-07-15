@@ -1,6 +1,6 @@
 # 🚀 Entropy Voyager
 
-![Entropy Voyager](project_demo.mkv)
+![Entropy Voyager](app.png)
 
 
 **Entropy Voyager** is a cross-platform desktop app built with **Electron** that transforms how users explore blockchain data on the Entropy testnet. Inspired by the early internet era of curiosity and discovery, it allows users to:
