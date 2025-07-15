@@ -46,6 +46,6 @@ async function fetchBlock() {
 
 async function askQuestion() {
   const question = document.getElementById('questionInput').value;
-  const answer = await window.entropyAPI.askLLM(question);
+  const answer = await window.entropyAPI.askLLMChat(question);
   document.getElementById('responseArea').innerHTML = `<pre>🤖 ${answer}</pre>`;
 }

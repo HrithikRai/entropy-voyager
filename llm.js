@@ -4,7 +4,7 @@ const cohere = new CohereClientV2({
   token: "cZWxyHPX5B72hYVgeLK45bTrwiM05v8lQ5dHGIXS",
 });
 
-async function askLLM(question, blockData) {
+async function askLLMChat(question, blockData) {
   const response = await cohere.chat({
     model: 'command-a-03-2025',
     messages: [
@@ -18,4 +18,4 @@ async function askLLM(question, blockData) {
 
 }
 
-module.exports = { askLLM };
+module.exports = { askLLMChat };
