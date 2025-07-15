@@ -1299,7 +1299,7 @@ input, select, textarea {
 				transition-delay: 0.25s;
 				padding: 3rem 2rem;
 				max-height: 40rem;
-				overflow: hidden;
+				overflow: auto;
 			}
 
 				#header .content .inner > :last-child {
@@ -1511,6 +1511,16 @@ input, select, textarea {
 		z-index: 3;
 	}
 
+	::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Optional: remove buttons if they appear */
+::-webkit-scrollbar-button {
+  display: none !important;
+}
+
 		#main article {
 			-moz-transform: translateY(0.25rem);
 			-webkit-transform: translateY(0.25rem);
@@ -1524,7 +1534,7 @@ input, select, textarea {
 			position: relative;
 			width: auto;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
+			background-color: rgb(0, 0, 0);
 			border-radius: 4px;
 			opacity: 0;
 		}
@@ -1546,7 +1556,7 @@ input, select, textarea {
 				height: 4rem;
 				cursor: pointer;
 				text-indent: 4rem;
-				overflow: hidden;
+				overflow: auto;
 				white-space: nowrap;
 			}
 

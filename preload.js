@@ -5,5 +5,4 @@ contextBridge.exposeInMainWorld('entropyAPI', {
   fetchBlocks: (count = 10) => ipcRenderer.invoke('fetchBlocks', count),
   askLLMChat: (question) => ipcRenderer.invoke('ask-llm-blockchat', question),
   askLLM: (question, blockNumber) => ipcRenderer.invoke('ask-llm', question, blockNumber),
-  startSpeech: () => ipcRenderer.invoke('start-speech')
 });
