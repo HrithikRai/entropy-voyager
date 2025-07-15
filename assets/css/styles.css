@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at center, #0f0f0f 0%, #000000 100%);
+    overflow: hidden;
+}
+
+#Bot {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* CHAT AREA */
+.chat-container {
+    flex: 1;
+    width: 100%;
+    padding: 40px 60px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    scroll-behavior: smooth;
+    backdrop-filter: blur(10px);
+}
+
+/* MESSAGES */
+.chat-message {
+    width: fit-content;
+    max-width: 100%;
+    padding: 20px 24px;
+    font-size: 18px;
+    line-height: 1.6;
+    word-break: break-word;
+    animation: fadeIn 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.user {
+    align-self: flex-end;
+    background: rgba(0, 255, 128, 0.1);
+    border-radius: 20px 20px 0 20px;
+    border-color: rgba(0, 255, 128, 0.3);
+}
+
+.ai {
+    align-self: flex-start;
+    background: rgba(128, 128, 255, 0.1);
+    border-radius: 20px 20px 20px 0;
+    border-color: rgba(128, 128, 255, 0.3);
+}
+
+/* PROMPT AREA */
+.prompt-area {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 20px;
+}
+
+.prompt-area input {
+    flex: 1;
+    height: 60px;
+    padding: 0 24px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: background 0.2s ease;
+}
+
+.prompt-area input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.prompt-area button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.prompt-area button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.prompt-area button img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(200%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLLBAR STYLING */
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+.chat-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .chat-container {
+        padding: 20px 20px;
+    }
+
+    .prompt-area {
+        padding: 16px;
+    }
+
+    .prompt-area input {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .prompt-area button {
+        width: 50px;
+        height: 50px;
+    }
+}

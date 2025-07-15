@@ -1,118 +1,87 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Dimension by HTML5 UP</title>
+		<title>Entropy Voyager by Hrithik Rai Saxena</title>
+		<style>
+		article {
+		min-height: 100vh;        /* Full viewport height */
+		width: 100%;              /* Full width */
+		padding: 2rem;            /* Adequate spacing inside */
+		box-sizing: border-box;   /* Padding doesn't overflow */
+		overflow-y: auto;
+		}
+	</style>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/glassmorph.css" />
-		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
+		<link rel="stylesheet" href="assets/css/browser.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
-		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Header -->
 					<header id="header">
 						<div class="logo">
 							<span class="icon fa-diamond"></span>
 						</div>
 						<div class="content">
 							<div class="inner">
-								<img src="logo.png" alt="logo" id="logo" style="width: 100px; height: auto;" />
+								<img src="images/logo.png" alt="logo" id="logo" style="width: 100px; height: auto;" />
 								<h1>Voyager</h1>
-								<p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+								<p>Unravel the Chain. Converse with Blocks. Decode the Unknown.</p>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+								<li><a href="#BlockChat">BlockChat</a></li>
+								<li><a href="#Browser">Entropy Browser</a></li>
+								<li><a href="#Bot">Entropy Bot</a></li>
 							</ul>
 						</nav>
 					</header>
 
-				<!-- Main -->
 					<div id="main">
-
-													<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<img src="logo.png" alt="logo" id="logo" style="width: 100px; height: auto;" />
-								<h2>Entropy Block Chat</h2>
-
+							<article id="BlockChat">
+								<h2 class="major">BlockChat</h2>
+								<img src="images/logo.png" alt="logo" id="logo" style="width: 100px; height: auto;" />
+								<h2>Talk to any block — literally. Just enter a block number and ask questions about its contents.
+								From transaction details to gas fees, BlockChat deciphers it all in plain English.</h2>
 								<div class="glassbox">
 								<input id="blockInput" placeholder="Enter block hash or type 'latest'" />
 								<button onclick="fetchBlock()">Fetch Block</button>
-
 								<div id="blockData" class="scrollable"></div>
-
 								<hr />
-
 								<input id="questionInput" placeholder="Ask something about the block..." />
 								<button onclick="askQuestion()">Ask</button>
-
 								<div id="responseArea" class="scrollable"></div>
 								</div>
 							</article>
 
-						<!-- Work -->
-							<article id="work">
-								<h1>Entropy Block Visualizer</h1>
-								<input id="blockCountInput" type="number" placeholder="How many blocks?" value="10" />
-								<button onclick="loadGraph()">🔄 Fetch Blocks</button>
+							<article id="Browser" class="browser-glass">
+							<h1>Entropy Browser</h1>
+							<p class="tagline">
+								Navigate the Blockchain <strong>Visually</strong> & <strong>Intelligently</strong>.  
+								Get summaries, detect anomalies, and explore data live!
+							</p>
 
-								<div id="network" style="height: 600px; width: 100%; margin-top: 20px;"></div>
+							<input id="blockCountInput" type="number" placeholder="How many blocks?" value="10" />
+							<button onclick="loadGraph()">🔄 Fetch Blocks</button>
 
-								</article>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+							<div id="network"></div>
 							</article>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
+							<article id="Bot">
+							<div class="chat-container" id="chatContainer">
+								<!-- Chat messages will appear here -->
+							</div>
+
+							<div class="prompt-area">
+								<input type="text" id="prompt" placeholder="Type your message...">
+								<button id="submit"><img src="images/submit.svg" alt="Send"></button>
+							</div>
+
+							<script src="assets/js/script.js"></script>
 							</article>
 
 						<!-- Elements -->
@@ -359,20 +328,16 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					</div>
 
-				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Made with Love by: <a href="https://hrithikrai.github.io">Hrithik Rai Saxena</a>.</p>
 					</footer>
 
 			</div>
 
-		<!-- BG -->
 			<div id="bg"></div>
 
-		<!-- Scripts -->
 		    <script src="renderer.js"></script>
 			<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>

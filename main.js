@@ -4,10 +4,40 @@ const { ApiPromise, WsProvider } = require('@polkadot/api');
 const { fetchBlockDetails } = require('./blockchain');
 const { askLLMChat } = require('./llm');
 const { askLLM } = require('./browserllm');
+
 const llmCache = new Map(); 
 let cachedBlockData = null;
 
+app.commandLine.appendSwitch('enable-features', 'SpeechRecognition');
 
+ipcMain.handle('start-speech', async () => {
+  try {
+    const { Recognizer } = await import('speech-to-text'); // dynamic ESM import
+
+    const recognizer = new Recognizer({
+      language: 'en-US',
+      debug: false,
+    });
+
+    return new Promise((resolve, reject) => {
+      recognizer.on('data', (data) => {
+        console.log('🗣️ Speech recognized:', data);
+        recognizer.stop();
+        resolve(data);
+      });
+
+      recognizer.on('error', (err) => {
+        console.error('❌ Speech error:', err);
+        reject(err.message);
+      });
+
+      recognizer.start();
+    });
+  } catch (err) {
+    console.error('❌ Failed to load speech-to-text:', err);
+    throw err;
+  }
+});
 
 ipcMain.handle('fetchBlocks', async (_event, count = 10) => {
   try {

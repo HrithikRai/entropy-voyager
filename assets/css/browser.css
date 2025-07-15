@@ -1,28 +1,78 @@
-body {
-  background-color: #0f0f0f;
-  color: #00ffaa;
-  font-family: 'Courier New', Courier, monospace;
+/* 🔍 Article Container Styling */
+#Browser.browser-glass {
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.05);
+  max-width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  padding: 20px;
+  color: #e6fff2;
 }
 
-button {
-  background-color: #00ffaa;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  margin: 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
+/* ✍️ Headline */
+#Browser h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #00ffaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-button:hover {
-  background-color: #00ddaa;
+/* 📌 Tagline Paragraph */
+#Browser .tagline {
+  color: #c8f7ff;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#network {
-  border: 1px solid #333;
+/* 🧮 Input for block count */
+#Browser input[type="number"] {
+  padding: 12px;
+  width: 60%;
+  max-width: 300px;
+  margin: 12px auto;
   border-radius: 10px;
-  background-color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease;
+}
+
+#Browser input[type="number"]::placeholder {
+  color: #77ffc2;
+}
+
+/* 🖼️ Graph Container */
+#network {
+  margin-top: 30px;
+  height: 600px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 20px rgba(0, 255, 170, 0.1);
+}
+
+/* 🧠 Node Styling if using Vis.js or similar */
+.node {
+  background: rgba(0, 255, 170, 0.2);
+  border: 2px solid #00ffaa;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
 }
