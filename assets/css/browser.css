@@ -1,0 +1,28 @@
+body {
+  background-color: #0f0f0f;
+  color: #00ffaa;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  background-color: #00ffaa;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00ddaa;
+}
+
+#network {
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+}

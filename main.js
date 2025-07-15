@@ -14,7 +14,7 @@ async function createWindow() {
     },
   });
 
-  win.loadFile('renderer.html');
+  win.loadFile('index.html');
 }
 
 ipcMain.handle('fetch-block', async (event, blockHashOrLatest) => {
