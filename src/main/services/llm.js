@@ -1,7 +1,11 @@
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../../../.env') });
+
 const { CohereClientV2 } = require('cohere-ai');
 
+require('dotenv').config();
 const cohere = new CohereClientV2({
-  token: "cZWxyHPX5B72hYVgeLK45bTrwiM05v8lQ5dHGIXS",
+  token: process.env.COHERE_API_KEY,
 });
 
 async function askLLMChat(question, blockData) {

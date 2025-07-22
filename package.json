@@ -2,7 +2,7 @@
   "name": "entropy-voyager",
   "version": "1.0.0",
   "description": "A blockchain explorer desktop app for Entropy testnet.",
-  "main": "main.js",
+  "main": "src/main/main.js",
   "scripts": {
     "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -53,6 +53,7 @@
     "@polkadot/api-contract": "^16.4.1",
     "@polkadot/extension-dapp": "^0.61.3",
     "cohere-ai": "^7.17.1",
+    "dotenv": "^17.2.0",
     "electron": "^27.0.0"
   },
   "dependencies": {

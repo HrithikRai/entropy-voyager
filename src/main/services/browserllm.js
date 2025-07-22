@@ -1,4 +1,6 @@
-// llm.js
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../../../.env') }); 
+
 const { CohereClientV2 } = require('cohere-ai');
 
 const cohere = new CohereClientV2({

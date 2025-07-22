@@ -1,12 +1,14 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { ApiPromise, WsProvider } = require('@polkadot/api');
-const { fetchBlockDetails } = require('./blockchain');
-const { askLLMChat } = require('./llm');
-const { askLLM } = require('./browserllm');
+const { fetchBlockDetails } = require('./services/blockchain');
+const { askLLMChat } = require('./services/llm');
+const { askLLM } = require('./services/browserllm');
 
+// cache - Entropy Browser
 const llmCache = new Map(); 
 let cachedBlockData = null;
+// cache - BlockChat
 let cache = null;
 
 ipcMain.handle('fetchBlocks', async (_event, count = 10) => {
@@ -97,7 +99,8 @@ async function createWindow() {
     },
   });
 
-  win.loadFile('index.html');
+  win.loadFile(path.join(__dirname, '../renderer/index.html'));
+;
 }
 
 app.whenReady().then(createWindow);
